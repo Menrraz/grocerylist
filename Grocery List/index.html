@@ -10,21 +10,24 @@
 </head>
 <body>
     <header>
-        <h1>Grocery List<i class="fas fa-shopping-cart"></i></h1>
+        <h1>Grocery List</h1>
         <img src="header-cart.jpg" alt="header logo" class='header-cart'>
     </header>
     <main>
         <section class="list">
             <label for="">
-                Add Item: <input type="text" name="" id="add"> <input type="button" value="add">
+                Item Name: <input type="text" name="" id="add" class='inputText'>
+                Quatity: <input type="number" name="" id="quantity" class='inputText'>
+                <input type="button" value="ADD" class='inputButton'>
             </label>
-            <div class="list-div">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, quisquam asperiores ad delectus non fugiat suscipit mollitia aliquid quibusdam, velit, labore aliquam qui voluptates nobis iusto optio commodi. Impedit, assumenda.
-                Iste commodi ad perferendis voluptatum sint tempora tempore soluta quidem ipsum laborum dolorem nisi assumenda quibusdam autem ducimus impedit iure nihil, amet dicta itaque quasi? Ipsam error dolorum sit itaque.
-                A enim sapiente accusantium aliquid consectetur iure aut nesciunt. Magni modi amet aspernatur, atque, laboriosam soluta optio adipisci velit consectetur harum aliquid aperiam laborum sunt, quas sed expedita aliquam facilis.
-                Iste possimus sequi magni perferendis quam quibusdam, eum placeat cumque! Veritatis debitis quae mollitia eius consequatur vero incidunt nisi? Repudiandae quaerat atque odio dolore ducimus velit corrupti placeat iure doloribus!
-            </div>
+            <h2>List <i class="fas fa-pen-alt"></i></h2>
+            <div class="list-div"><!-- Items go here --></div>
+        </section>
+        <section class="cart">
+            <h2>Cart <i class="fas fa-shopping-cart"></i></h2>
+            <div class="cart-list"><!-- Items go here --></div>
         </section>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
