@@ -1,16 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Readex+Pro:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
 * {
+    font-family: 'Readex Pro', sans-serif;
+    font-size: 10px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    background: linear-gradient(0deg, rgba(92,91,91,1) 11%, rgba(69,69,69,1) 58%, rgba(43,43,43,1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 150px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    width: 97%;
+}
 h1 {
+    font-size: 35px;
     text-align: center;
     font-family: 'Readex Pro', sans-serif;
     position: absolute;
     line-height: 180px;
     color: white;
     z-index: 1;
+}
+h2 {
+    font-size: 20px;
+    margin: 7px 0 7px 0;
+}
+h2 i {
+    font-size: 20px;
 }
 header {
     display: flex;
@@ -21,17 +48,55 @@ header {
 .header-cart {
     margin-top: -5px;
     width: 100%;
-    filter: brightness(0.6) blur(2px);
+    filter: brightness(0.4);
+}
+label {
+    display: flex;
+    font-size: 16px;
+    flex-direction: column;
+    width: 95%;
+}
+.inputText {
+    border: 2px solid rgb(119, 119, 119);
+    border-radius: 5px;
+    font-size: 15px;
+    text-align: center;
+    padding: 8px;
+    width: 100%;
+
+}
+.inputButton {
+    border: 2px solid rgb(119, 119, 119);
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 8px;
+}
+.inputButton:hover {
+    background-color: yellow;
+    border: 2px solid black;
+    cursor: pointer;
+    font-weight: bold;
 }
 .list {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    width: 100%;
 }
-.list-div {
+.cart {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.list-div, .cart-list {
+    border: 2px solid rgb(119, 119, 119);
+    border-radius: 8px;
+    font-size: 18px;
     height: 350px;
-    margin-top: 10px;
     overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 8px;
     width: 95%;
 }
