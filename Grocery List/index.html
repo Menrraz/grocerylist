@@ -16,16 +16,28 @@
     <main>
         <section class="list">
             <label for="">
-                Item Name: <input type="text" name="" id="add" class='inputText'>
-                Quatity: <input type="number" name="" id="quantity" class='inputText'>
-                <input type="button" value="ADD" class='inputButton'>
+                Item Name: <input type="text" name="" id="name" class='inputText' placeholder="Name">
+                <select name="quantity-select" id="quantity-select">
+                    <option value="0" default>Quantity</option>
+                    <option value="Kg">KG</option>
+                    <option value="unity">Unity</option>
+                </select>
+                <input type="number" name="" id="quantity" class='inputText' placeholder="Number">
+                <input type="button" value="ADD" class='inputButton' id='button' onclick="add()">
             </label>
+            <p id='warning'></p>
             <h2>List <i class="fas fa-pen-alt"></i></h2>
-            <div class="list-div"><!-- Items go here --></div>
+            <div class="list-div" id="list-div">
+                <div class="list-header">
+                    <p>Name:</p>
+                    <p>Quantity/KG</p>
+                </div>
+                <!-- items go here-->
+            </div>
         </section>
         <section class="cart">
             <h2>Cart <i class="fas fa-shopping-cart"></i></h2>
-            <div class="cart-list"><!-- Items go here --></div>
+            <div class="cart-list" id='cart-div'><!-- items go here--></div>
         </section>
     </main>
     <script src="script.js"></script>
