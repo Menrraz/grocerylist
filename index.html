@@ -54,6 +54,7 @@
             <p class='result-p result-p2' id="result-p2">Itens no carrinho:</p>
             <p class='result-p result-p3' id="result-p3">Preço final:</p>
         </section>
+        <input type="button" value="Finalizar Compras" class='finalize' id='finalize' onclick='finalize(), window.location.reload()'>
     </main>
     <div class="background-window" id="backgroundWindow" onclick='closeWindow()'></div>
         <div class="add-to-cart-window" id='cartWindow'>
@@ -63,8 +64,6 @@
                 <input type="number" placeholder="$" id='price'>
             </form>
         </div>
-
-
     <script src="script.js"></script>
 </body>
 </html>
