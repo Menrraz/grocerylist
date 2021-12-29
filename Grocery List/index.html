@@ -15,31 +15,56 @@
     </header>
     <main>
         <section class="list">
-            <label for="">
-                Item Name: <input type="text" name="" id="name" class='inputText' placeholder="Name">
+            <form action="" class='inputs'>
+                <label for="">Item Name:</label><input type="text" id="itemName" class='inputText' placeholder="Name" required>
                 <select name="quantity-select" id="quantity-select">
                     <option value="0" default>Quantity</option>
-                    <option value="Kg">KG</option>
+                    <option value="KG">KG</option>
                     <option value="unity">Unity</option>
                 </select>
-                <input type="number" name="" id="quantity" class='inputText' placeholder="Number">
+                <input type="number" name="" id="quantity" class='inputText' placeholder="Number" required>
                 <input type="button" value="ADD" class='inputButton' id='button' onclick="add()">
-            </label>
+            </form>
             <p id='warning'></p>
             <h2>List <i class="fas fa-pen-alt"></i></h2>
+            <div class="progressbar" id='progressbar'>
+                <div class="bar" id='bar'></div>
+            </div>
             <div class="list-div" id="list-div">
                 <div class="list-header">
                     <p>Name:</p>
-                    <p>Quantity/KG</p>
-                </div>
-                <!-- items go here-->
-            </div>
+                    <p>Quantity</p>
+                </div><!-- items go here--></div>
         </section>
         <section class="cart">
+
             <h2>Cart <i class="fas fa-shopping-cart"></i></h2>
-            <div class="cart-list" id='cart-div'><!-- items go here--></div>
+            <div class="cart-div" id='cart-div'>
+                
+                <div class="cart-header">
+                    <p>Name:</p>
+                    <p>Quantity</p>
+                    <p>Price</p>
+
+                </div><!-- items go here--></div>
+
+        </section>
+        <section class='result' id='result'>
+            <p class='result-p result-p1' id="result-p1">Itens faltando:</p>
+            <p class='result-p result-p2' id="result-p2">Itens no carrinho:</p>
+            <p class='result-p result-p3' id="result-p3">Preço final:</p>
         </section>
     </main>
+    <div class="background-window" id="backgroundWindow" onclick='closeWindow()'></div>
+        <div class="add-to-cart-window" id='cartWindow'>
+            <form action="" id='add-to-cart-form'>
+                <p class='x' onclick="closeWindow()">X</p>
+                <label for="">How much does it cost?</label>
+                <input type="number" placeholder="$" id='price'>
+            </form>
+        </div>
+
+
     <script src="script.js"></script>
 </body>
 </html>
