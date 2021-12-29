@@ -234,6 +234,25 @@ p#warning {
     width: max-content;
 }
 
+.finalize {
+    border: 2px solid rgb(119, 119, 119);
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 5px;
+    width: 95%;
+}
+.finalize:hover {
+    border: 2px solid black;
+    background-color: yellow;
+    font-weight: bold;
+}
+.finalize:active {
+    transform: scale(0.95);
+    background-color: rgb(255, 255, 59);
+    font-weight: bold;
+}
+
 div#backgroundWindow {
     display: none;
     justify-content: center;
