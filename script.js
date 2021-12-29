@@ -162,5 +162,6 @@ function writeResult() {
         return sum
     }   
 }
-
-function clear() { return localStorage.clear() } // Make my life easier
+function finalize() {
+    localStorage.clear()
+}
