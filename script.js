@@ -12,8 +12,16 @@ function addItem(keyItem, keyQuantity) {
             <p class='item-p item-p1'>${localStorage.getItem(keyItem)}</p>
             <p class='item-p item-p2'>${localStorage.getItem(keyQuantity)}</p>
             <div class='div-icons'>
-                <i class="fas fa-shopping-cart icon" ontouchstart='toCart()' onclick="addToCart('${'item' + k}','${'quantity' + k}', 'icon')"></i>
-                <i class="fas fa-trash-alt icon" onclick="removeItem('${'item' + k}', '${'quantity' + k}')" title='Remove Item'></i>
+
+                <i class="fas fa-shopping-cart icon" 
+                ontouchend="addToCart('${'item' + k}','${'quantity' + k}', 'icon')" 
+                onclick="addToCart('${'item' + k}','${'quantity' + k}', 'icon')">
+                </i>
+
+                <i class="fas fa-trash-alt icon" id='toCartId' 
+                onclick="removeItem('${'item' + k}', '${'quantity' + k}')"
+                ontouchend="removeItem('${'item' + k}', '${'quantity' + k}')"
+                title='Remove Item'></i>
             </div>
         </div>`) : '' // To not create useless divs and get in my way on CSS styles
     i()
@@ -88,6 +96,8 @@ function toCart(item, quantity, origin) {
     closeWindow() 
     buttonToCart.remove() // Otherwise it will create a new button every time addToCart() is called
 }
+
+
 function addDiv(item, quantity) {
     cartDiv.insertAdjacentHTML('beforeend', `
         <div class='cart-item' id='cart_${item}'>
