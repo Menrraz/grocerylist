@@ -14,13 +14,13 @@ function addItem(keyItem, keyQuantity) {
             <div class='div-icons'>
 
                 <i class="fas fa-shopping-cart icon" 
-                ontouchend="addToCart('${'item' + k}','${'quantity' + k}', 'icon')" 
+                ontouchstart="addToCart('${'item' + k}','${'quantity' + k}', 'icon')" 
                 onclick="addToCart('${'item' + k}','${'quantity' + k}', 'icon')">
                 </i>
 
                 <i class="fas fa-trash-alt icon" id='toCartId' 
                 onclick="removeItem('${'item' + k}', '${'quantity' + k}')"
-                ontouchend="removeItem('${'item' + k}', '${'quantity' + k}')"
+                ontouchstart="removeItem('${'item' + k}', '${'quantity' + k}')"
                 title='Remove Item'></i>
             </div>
         </div>`) : '' // To not create useless divs and get in my way on CSS styles
