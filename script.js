@@ -2,23 +2,19 @@ const button = document.getElementById('button');
 const listDiv = document.getElementById('list-div')
 const warning = document.getElementById('warning')
 const quantitySelect = document.getElementById('quantity-select')
-let k = 0
-
 
 function addItem(keyItem, keyQuantity) {
-    let i = () => k++
     if (localStorage.getItem(keyItem) && localStorage.getItem(keyItem) !== 'null' && localStorage.getItem(keyItem)[0] !== '-') {
         listDiv.insertAdjacentHTML('beforeend', `
-        <div class='item-div' id='item${k}'>
+        <div class='item-div' id='${keyItem}'>
             <p class='item-p item-p1'>${localStorage.getItem(keyItem)}</p>
             <p class='item-p item-p2'>${localStorage.getItem(keyQuantity)}</p>
             <div class='div-icons'>
-                <i class="fas fa-shopping-cart icon" onclick="addToCart('${'item' + k}','${'quantity' + k}', 'icon')">
+                <i class="fas fa-shopping-cart icon" onclick="addToCart('${keyItem}','${keyQuantity}', 'icon')">
                 </i>
-                <i class="fas fa-trash-alt icon" id='removeButton' onclick="removeItem('${'item' + k}', '${'quantity' + k}')" title='Remove Item'></i>
+                <i class="fas fa-trash-alt icon" id='removeButton' onclick="removeItem('${keyItem}', '${keyQuantity}')" title='Remove Item'></i>
             </div>
         </div>`)
-        i()
     }
 }
 const progressBar = document.getElementById('progressBar')
