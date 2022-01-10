@@ -3,26 +3,24 @@ const listDiv = document.getElementById('list-div')
 const warning = document.getElementById('warning')
 const quantitySelect = document.getElementById('quantity-select')
 let k = 0
-let i = () => k++
+
 
 function addItem(keyItem, keyQuantity) {
-    localStorage.getItem(keyItem) && localStorage.getItem(keyItem) !== 'null' && localStorage.getItem(keyItem)[0] !== '-' ? // '-' means already in the cart
+    let i = () => k++
+    if (localStorage.getItem(keyItem) && localStorage.getItem(keyItem) !== 'null' && localStorage.getItem(keyItem)[0] !== '-') {
         listDiv.insertAdjacentHTML('beforeend', `
         <div class='item-div' id='item${k}'>
             <p class='item-p item-p1'>${localStorage.getItem(keyItem)}</p>
             <p class='item-p item-p2'>${localStorage.getItem(keyQuantity)}</p>
             <div class='div-icons'>
-                <i class="fas fa-shopping-cart icon" 
-                onclick="addToCart('${'item' + k}','${'quantity' + k}', 'icon')">
+                <i class="fas fa-shopping-cart icon" onclick="addToCart('${'item' + k}','${'quantity' + k}', 'icon')">
                 </i>
-                <i class="fas fa-trash-alt icon" id='toCartId' 
-                onclick="removeItem('${'item' + k}', '${'quantity' + k}')"
-                title='Remove Item'></i>
+                <i class="fas fa-trash-alt icon" id='removeButton' onclick="removeItem('${'item' + k}', '${'quantity' + k}')" title='Remove Item'></i>
             </div>
-        </div>`) : '' // To not create useless divs and get in my way on CSS styles
-    i()
+        </div>`)
+        i()
+    }
 }
-
 const progressBar = document.getElementById('progressBar')
 const bar = document.getElementById('bar')
 
@@ -46,13 +44,14 @@ function barProgress() {return bar.style.width = `${ (itemOn()[1] / (itemOn()[0]
 barProgress()
 
 function removeItem(item, quantity) {
-    let deletedItem = document.getElementById(item).remove()
     localStorage.removeItem(item)
     localStorage.removeItem(quantity)
     rewrite()
     barProgress()
     writeResult()
+    document.getElementById(item).remove()
 } 
+
 function removeItemCart(item, quantity) {
     document.getElementById(`cart_${item}`).remove()
     localStorage.removeItem(item)
@@ -157,7 +156,6 @@ function writeResult() {
     if (itemOn()[1] > 0) {
         for (let i = 0; i < localStorage.length/2; i++) {
             let arrayItem = localStorage.getItem(`item${i}`).split('-')[1]*localStorage.getItem(`quantity${i}`)
-            console.log()
             if (localStorage.getItem(`item${i}`) && localStorage.getItem(`item${i}`)[0] == '-') {
                 document.getElementById('result').style.display = 'flex'
                 document.getElementById('result-p1').innerHTML = `Itens faltando: ${itemOn()[0]}`
