@@ -51,14 +51,24 @@ main {
         padding: 30px 15px 25px 15px;
     }
 }
+@media (min-width:500px) {
+    main {
+        width: 450px;
+    }
+}
 h1 {
-    font-size: 35px;
+    font-size: 29px;
     text-align: center;
     font-family: 'Readex Pro', sans-serif;
     position: absolute;
     line-height: 180px;
     color: white;
     z-index: 1;
+}
+@media (min-width:400px) {
+    h1 {
+        font-size: 40px;
+    }
 }
 h2 {
     font-size: 20px;
@@ -77,6 +87,11 @@ header {
     margin-top: -5px;
     width: 100%;
     filter: brightness(0.35);
+}
+@media (min-width: 500px) {
+    .header-cart {
+        width: 450px;
+    }
 }
 .inputs {
     display: flex;
@@ -100,6 +115,13 @@ select {
     font-size: 15px;
     border: 2px solid gray;
     border-radius: 5px;
+}
+select>option {
+    font-size: 18px;
+    padding: 10px;
+}
+select>option:hover {
+    color: yellow;
 }
 input#add, input#quantity {
     margin-top: 5px;
@@ -159,7 +181,7 @@ input#add, input#quantity {
     }
 }
 .list-header p + p {
-    width: 30%;
+    width: 40%;
 }
 .cart-header .price-p {
     width: 20%;
@@ -249,7 +271,7 @@ p#warning {
 }
 .cart-item .cart-p2 {
     text-align: center;
-    width: 25%;
+    width: 6%;
     font-size: 14px;
     color: #444444;
 }
@@ -300,9 +322,10 @@ p#warning {
     font-weight: bold;
 }
 
-div#backgroundWindow {
-    display: none;
+#backgroundWindow {
+    display: flex;
     justify-content: center;
+    align-items: center;
     position: fixed;
     background: #00000099;
     width: 100vw;
@@ -312,7 +335,7 @@ div#backgroundWindow {
 .add-to-cart-window {
     display: none;
     position: fixed;
-    bottom: 100vw;
+    bottom: 40%;
     margin: 0 auto 0 auto;
     background-color: white;
     padding: 20px;
@@ -320,6 +343,11 @@ div#backgroundWindow {
     border-radius: 10px;
     width: 92%;
     z-index: 1;
+}
+@media (min-width:350px) {
+    .add-to-cart-window {
+        width: 310px;
+    }
 }
 .add-to-cart-window .x {
     font-size: 16px;
@@ -348,6 +376,7 @@ div#backgroundWindow {
 }
 .add-to-cart-window label {
     font-size: 18px;
+    text-align: center;
 }
 .add-to-cart-window input[type="button"] {
     border: 2px solid rgb(119, 119, 119);
