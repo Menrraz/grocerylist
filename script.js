@@ -10,9 +10,9 @@ function addItem(keyItem, keyQuantity) {
             <p class='item-p item-p1'>${localStorage.getItem(keyItem)}</p>
             <p class='item-p item-p2'>${localStorage.getItem(keyQuantity)}</p>
             <div class='div-icons'>
-                <i class="fas fa-shopping-cart icon" onclick="addToCart('${keyItem}','${keyQuantity}', 'icon')">
+                <i class="fas fa-shopping-cart icon" onclick="addToCart('${keyItem}','${keyQuantity}', 'icon')" title="Mandar para o carrinho">
                 </i>
-                <i class="fas fa-trash-alt icon" id='removeButton' onclick="removeItem('${keyItem}', '${keyQuantity}')" title='Remove Item'></i>
+                <i class="fas fa-trash-alt icon" id='removeButton' onclick="removeItem('${keyItem}', '${keyQuantity}')" title='Remover item'></i>
             </div>
         </div>`)
     }
@@ -68,7 +68,7 @@ function addToCart(item, quantity) {
     cartWindow.style.display = 'block'
     body.style = 'overflow-y: hidden'
     buttonToCart.setAttribute('type', 'button')
-    buttonToCart.setAttribute('value', 'TO CART')
+    buttonToCart.setAttribute('value', 'Para o Carrinho')
     buttonToCart.setAttribute('onclick', `toCart('${item}', '${quantity}', origin='icon')`)
     addToCartForm.appendChild(buttonToCart)
 }
@@ -95,7 +95,7 @@ function addDiv(item, quantity) {
             <p class='cart-p cart-p1'>${localStorage.getItem(item).split('-')[2]}</p>
             <p class='cart-p cart-p2'>${localStorage.getItem(quantity)}</p>
             <p class='cart-p cart-p3'>$${localStorage.getItem(item).split('-')[1]*localStorage.getItem(quantity)}</p>
-            <i class="fas fa-trash-alt icon" onclick="removeItemCart('${item}', '${quantity}')" title='Remove Item'></i>
+            <i class="fas fa-trash-alt icon" onclick="removeItemCart('${item}', '${quantity}')" title='Remover item'></i>
         </div>
         `
     )
@@ -137,6 +137,8 @@ function add() {
         barProgress()
         writeResult()
     }
+    itemName.value = ''
+    quantity.value = ''
 }
 for (let k = 0; k <= localStorage.length / 2; k++) {
     keyItem = 'item' + k
