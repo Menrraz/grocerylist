@@ -37,6 +37,7 @@ main {
     padding-top: 15px;
     padding-bottom: 20px;
     width: 97%;
+    box-shadow: 1px 1px 20px 1px #00000086;
 }
 @media (min-width:300px) {
     main {
@@ -87,6 +88,7 @@ header {
     margin-top: -5px;
     width: 100%;
     filter: brightness(0.35);
+    box-shadow: 1px 1px 20px 1px #00000086;
 }
 @media (min-width: 500px) {
     .header-cart {
