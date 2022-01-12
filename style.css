@@ -37,7 +37,7 @@ main {
     padding-top: 15px;
     padding-bottom: 20px;
     width: 97%;
-    box-shadow: 1px 1px 20px 1px #00000086;
+    box-shadow: 1px 1px 20px 1px  #00000086;
 }
 @media (min-width:300px) {
     main {
@@ -341,8 +341,8 @@ p#warning {
     margin: 0 auto 0 auto;
     background-color: white;
     padding: 20px;
-    border: 2px solid rgb(70, 70, 70);
     border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px #2a2a2a;
     width: 92%;
     z-index: 1;
 }
@@ -350,6 +350,17 @@ p#warning {
     .add-to-cart-window {
         width: 310px;
     }
+}
+.add-to-cart-window-2nd-p {
+    color: darkslategray;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 6px;
+}
+.add-to-cart-window-2nd-p span {
+    color: black;
+    font-size: 12px;
 }
 .add-to-cart-window .x {
     font-size: 16px;
