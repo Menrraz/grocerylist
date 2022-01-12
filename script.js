@@ -94,7 +94,7 @@ function addDiv(item, quantity) {
         <div class='cart-item' id='cart_${item}'>
             <p class='cart-p cart-p1'>${localStorage.getItem(item).split('-')[2]}</p>
             <p class='cart-p cart-p2'>${localStorage.getItem(quantity)}</p>
-            <p class='cart-p cart-p3'>$${localStorage.getItem(item).split('-')[1]*localStorage.getItem(quantity)}</p>
+            <p class='cart-p cart-p3'>$${(localStorage.getItem(item).split('-')[1]*localStorage.getItem(quantity).substring(0, localStorage.getItem(quantity).indexOf("k") == -1 ? 3 : localStorage.getItem(quantity).indexOf("k"))).toFixed(2) }</p>
             <i class="fas fa-trash-alt icon" onclick="removeItemCart('${item}', '${quantity}')" title='Remover item'></i>
         </div>
         `
@@ -153,7 +153,8 @@ function writeResult() {
     let array = []
     if (itemOn()[1] > 0) {
         for (let i = 0; i < localStorage.length/2; i++) {
-            let arrayItem = localStorage.getItem(`item${i}`).split('-')[1]*localStorage.getItem(`quantity${i}`)
+            let arrayItem = localStorage.getItem(`item${i}`).split('-')[1]*localStorage.getItem(`quantity${i}`).substring(0, 
+                localStorage.getItem(`quantity${i}`).indexOf("k") == -1 ? 9 : localStorage.getItem(`quantity${i}`).indexOf("k"))
             if (localStorage.getItem(`item${i}`) && localStorage.getItem(`item${i}`)[0] == '-') {
                 document.getElementById('result').style.display = 'flex'
                 document.getElementById('result-p1').innerHTML = `Itens faltando: ${itemOn()[0]}`
@@ -161,7 +162,8 @@ function writeResult() {
                 array.push(Number(arrayItem))
             }
         }
-        let sum = array.reduce( (a, b) => a + b )
+        console.log(array)
+        let sum = array.reduce( (a, b) => a + b ).toFixed(2)
         document.getElementById('result-p3').innerHTML = `Preço final: $${sum}`
         return sum
     }   
