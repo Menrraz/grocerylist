@@ -71,6 +71,7 @@ function addToCart(item, quantity) {
     buttonToCart.setAttribute('value', 'Para o Carrinho')
     buttonToCart.setAttribute('onclick', `toCart('${item}', '${quantity}', origin='icon')`)
     addToCartForm.appendChild(buttonToCart)
+    const price = document.getElementById('price').value = ""
 }
 function toCart(item, quantity, origin) {
     const price = document.getElementById('price')
@@ -162,7 +163,6 @@ function writeResult() {
                 array.push(Number(arrayItem))
             }
         }
-        console.log(array)
         let sum = array.reduce( (a, b) => a + b ).toFixed(2)
         document.getElementById('result-p3').innerHTML = `Preço final: $${sum}`
         return sum
