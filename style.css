@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 10px;
 }
 body {
     background: linear-gradient(0deg, rgba(92,91,91,1) 11%, rgba(69,69,69,1) 58%, rgba(43,43,43,1) 100%);
